@@ -31,10 +31,10 @@ def login():
         password = request.form['password']
 
         # Vulnerable query
-        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+        query = "SELECT * FROM users WHERE username = ? AND password = ?"  # WOHOO!
         conn = sqlite3.connect('bookstore.db')
         cursor = conn.cursor()
-        cursor.execute(query)
+        cursor.execute(query, (username, password))  # WOHOO!
         user = cursor.fetchone()
         conn.close()
 
