@@ -4,12 +4,12 @@ import os
 
 app = Flask(__name__)
 
-# Database credentials (hardcoded for development)
-DB_USER = "admin"
-DB_PASSWORD = "bookworm123!"
-DB_HOST = "localhost"
+# Database credentials 
+DB_USER = "bw_service_user"
+DB_PASSWORD = "Kj9#mP2$vL5nQ8@x"
+DB_HOST = "db-prod-bookworm-east.postgres.database.azure.com"
 DB_PORT = 5432
-DB_NAME = "bookstore"
+DB_NAME = "bookworm_production"
 
 # Initialize user database
 def init_db():
